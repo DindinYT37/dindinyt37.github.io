@@ -38,7 +38,7 @@
 		<style type="text/css">
 			.header .link { max-width: 128px!important; }
 
-			.logo.logo-wide {
+			.logo.logo-wide > a {
 				display: flex;
 				align-items: center;
 				justify-content: flex-start;
@@ -59,7 +59,7 @@
 	</head>
 	<body>
 		<header class="header">
-			<div class="logo logo-wide">DindinYT37</div>
+			<div class="logo logo-wide"><a href="https://twitter.com/DindinYT37" target="_blank" rel="noopener noreferrer external">DindinYT37</a></div>
 			<div class="left">
 				<a class="link" href="/">About</a>
 				<a class="link" href="/loot-quest/">Loot Quest</a>
@@ -74,7 +74,32 @@
 			<p class="header_lg">Loot-Quest</p>
 			<p>Well, there is only one thing here. The calculator.</p>
 
-			<div style="width: 80%; min-width: 256px; max-width: 512px;"></div>
+			<style type="text/css">
+				.calculator {
+					width: 80%;
+					min-width: 256px;
+					max-width: 512px;
+				}
+				.calculator .input-field {
+					width: 100%;
+				}
+				.calculator .evolved { color: var(--blue); }
+				.calculator .magnificent { color: var(--indigo); }
+				.calculator .godly { color: var(--yellow); }
+				.calculator .titanic { color: var(--orange); }
+				.calculator .titanicplus { color: var(--red); }
+				.calculator .unobtainable { color: black; -webkit-text-stroke: 1px white; }
+
+				.calculator select {
+					width: 96px;
+					text-align: center;
+					padding-right: 13px;
+				}
+				.calculator .input-field.input-plus { width: 69px; }
+			</style>
+			<div>
+				<input type="" name="">
+			</div>
 		</div>
 
 		<footer id="footer" class="footer">
