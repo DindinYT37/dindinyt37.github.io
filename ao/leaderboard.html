@@ -9,6 +9,48 @@
 				color: white;
 			}
 		</style>
+
+		<style type="text/css">
+			.content {
+				width: max-content;
+				flex-direction: column;
+				align-items: center;
+			}
+			.input {
+				width: 384px;
+				display: flex;
+				justify-content: space-evenly;
+			}
+			.input > button {
+				width: calc(33.3% - 16px);
+			}
+
+			table {
+				border-radius: 8px;
+				border-collapse: collapse;
+				overflow: hidden;
+				border: 1px solid var(--sec-text);
+				font-size: 90%;
+			}
+			th {
+				background-color: rgba(0,0,0,.2);
+				border: 1px solid var(--sec-text);
+				font-weight: 500;
+				color: var(--blue);
+			}
+			th, td { padding: 2px 12px; }
+			td { border: 1px solid var(--very-light); }
+			.odd td { background-color: var(--dark); }
+
+			tbody.mixed tr.male td[h="gender"] { color: var(--light-blue); }
+			tbody.mixed tr.female td[h="gender"] { color: var(--purple); }
+
+			tr.common td[h="race"] { color: var(--sec-text); }
+			tr.uncommon td[h="race"] { color: var(--lime); }
+			tr.rare td[h="race"] { color: var(--blue); }
+			tr.epic td[h="race"] { color: var(--indigo); }
+			tr.legendary td[h="race"] { color: var(--user_creating); }
+		</style>
 	</head>
 	<body>
 		
