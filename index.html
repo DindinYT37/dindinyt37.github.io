@@ -67,10 +67,10 @@
                 font-weight: 200;
             }
             
-            div#frame1 {
+            div#introduction {
                 max-width: 40%;
             }
-            #frame1 div.funky {
+            #introduction div.funky {
                 position: absolute;
                 right: 0px;
                 top: 0;
@@ -80,18 +80,18 @@
                 flex-direction: column;
                 flex-wrap: nowrap;
             }
-            #frame1 div.funky span {
+            #introduction div.funky span {
                 font-size: 80px;
                 font-weight: 700;
             }
-            #frame1 div.funky div {
+            #introduction div.funky div {
                 position: relative;
             }
-            #frame1 div.funky div span:first-child {
+            #introduction div.funky div span:first-child {
                 position: relative;
                 bottom: 60px;
             }
-            #frame1 div.funky:before {
+            #introduction div.funky:before {
                 content: "";
                 width: 100%;
                 height: 100%;
@@ -101,8 +101,34 @@
                 z-index: 9;
                 background: linear-gradient(90deg,rgb(17,18,19),transparent);
             }
-            #frame1 svg {
+            #introduction > div:not(.funky) {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: center;
+                font-weight: 300;
+                gap: 5px;
+                cursor: pointer;
+            }
+            #introduction > div:not(.funky) span:first-child {
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                align-items: center;
+                padding: 2px;
                 
+                background-color: white;
+                aspect-ratio: 1/1;
+                max-width: 50px;
+                max-height: 50px;
+                border-radius: 50%;
+                
+                color: rgb(5,7,9);
+                font-weight: 600;
+            }
+            #introduction > div:not(.funky) span:first-child span.code {
+                padding: 0;
+                padding-right: 2px;
             }
         </style>
 	</head>
@@ -121,16 +147,23 @@
                 <span class="title">Projects</span>
             </div>
         </header>
-		<div id="frame1">
+		<div id="introduction">
             <h1>Din</h1>
-            <span>I am Dindin, a <b>full-Stack programmer</b>, planning to leave a remakable impact in the current time.</span>
+            <span>I am Dindin, a <b>full-stack programmer</b>, planning to leave a remakable impact in the current time.</span>
             <div>
+                <!--
                 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="#00000" width="50px" height="50px">
+                    <text x="50%" y="50%">↓ My</text>
                     <circle cx="50" cy="50" r="50" />
                 </svg>
-                <span>↓ My</span>
+                -->
+                <span>
+                    <span class="code">▼</span>
+                    <span>My</span>
+                </span>
                 <span> Projects</span>
-                <div class="funky">
+            </div>
+            <div class="funky">
                     <div>
                         <span>Hello</span>
                         <span>World</span>
@@ -157,7 +190,6 @@
                     </div>
                     
                 </div>
-            </div>
         </div>
 	</body>
 </html>
