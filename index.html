@@ -1,304 +1,405 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title id="title">Din - Full Stack Developer</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="description" content="Din - Full Stack Developer Portfolio. Creating impactful solutions through code.">
-		
-		<!-- Open Graph / Social Media -->
-		<meta property="og:title" content="Din - Full Stack Developer">
-		<meta property="og:description" content="Full Stack Developer Portfolio. Creating impactful solutions through code.">
-		<meta property="og:type" content="website">
-		<meta property="og:url" content="https://din.works">
-		
-		<link rel="canonical" href="https://din.works">
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-        
-        <style>
-            html {
-                margin: 0;
-                width: 100%;
-                height: 100%;
-            }
-            
-            body {
-                margin: 16px;
-                margin-top: calc(80px + 16px);
-                background-color: rgb(17,18,19);
-                color: rgb(245,250,255);
-                
-                font-family: "Roboto Slab", sans-serif;
-                font-size: 21px;
-                font-weight: 100;
-                
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            div.content {
-                max-width: 1200px;
-                max-height: calc(100vh - 180px);
-                width: 80vw;
-                height: calc(100vh - 220px);
-                min-width: 720px;
-                min-height: 480px;
-                
-                background-color: rgb(17,18,19);
-                box-shadow: 0 0 8px rgba(17,18,19);
-                border-radius: 24px;
-                padding: 10px 40px;
-            }
-            div.content:before {
-                content: "";
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100vw;
-                height: 100vh;
-                filter: brightness(0.5) blur(16px);
-                background-image: url(https://images.rbxcdn.com/782b7fc18a24ee997efd9a7f02fa4bf9-bg_08072019.jpg);
-                z-index: -2;
-            }
-            h1 {
-                margin: 0 0 20px 0;
-                font-size: 80px;
-                font-weight: 900;
-            }
-            b {
-                font-weight: 400;
-            }
-            .code {
-                font-family: "JetBrains Mono", monospace;
-            }
-            
-            header {
-                width: calc(100% - 24px);
-                padding: 0 12px;
-                height: 80px;
-                display: flex;
-                flex-direction: row;
-                flex-wrap: nowrap;
-                justify-content: flex-end;
-                align-items: center;
-                gap: 40px;
-                
-                position: fixed;
-                z-index: 999;
-                top: 0;
-                left: 0;
-                
-                background-color: rgba(17,18,19,0.5);
-                backdrop-filter: blur(8px);
-                box-shadow: 0 0 8px rgba(17,18,19,0.5);
-            }
-            header > div {
-                display: flex;
-                flex-direction: column;
-                flex-wrap: nowrap;
-                justify-content: center;
-                align-items: flex-end;
-                
-                cursor: pointer;
-                font-size: 18px;
-            }
-            header span.index {
-                font-weight: 600;
-            }
-            header span.title {
-                font-weight: 200;
-            }
-            
-            div#introduction {
-                position: relative;
-                width: 100%;
-                height: 100%;
-                overflow: hidden;
-                display: flex;
-                
-            }
-            #introduction .intro {
-                max-width: 45%;
-            }
-            #introduction div.funky {
-                position: absolute;
-                right: 0;
-                top: 0;
-                color: rgba(245,250,255,0.1);
-                
-                display: flex;
-                flex-direction: column;
-                flex-wrap: nowrap;
-            }
-            #introduction div.funky span {
-                font-size: 80px;
-                font-weight: 700;
-            }
-            #introduction div.funky div {
-                position: relative;
-            }
-            #introduction div.funky div span:first-child {
-                position: relative;
-                bottom: 60px;
-            }
-            #introduction div.funky:before {
-                content: "";
-                width: 100%;
-                height: 100%;
-                position: absolute;
-                right: 0;
-                top: 0;
-                z-index: 9;
-                /* background: linear-gradient(90deg,rgb(17,18,19),transparent); */
-                background: radial-gradient(circle at 250%,transparent,rgb(17,18,19));
-            }
-            #introduction > div:not(.funky) > div {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: nowrap;
-                align-items: center;
-                font-weight: 300;
-                gap: 5px;
-                cursor: pointer;
-            }
-            #introduction > div:not(.funky) > div span:first-child {
-                position: relative;
-                display: inline-flex;
-                align-items: center;
-                align-items: center;
-                padding: 2px;
-                
-                background-color: white;
-                aspect-ratio: 1/1;
-                max-width: 50px;
-                max-height: 50px;
-                border-radius: 50%;
-                
-                color: rgb(5,7,9);
-                font-weight: 600;
-            }
-            #introduction > div:not(.funky) > div span:first-child span.code {
-                padding: 0;
-                padding-right: 2px;
-            }
-            
-            @media (max-width: 768px) {
-                div.content {
-                    min-width: unset;
-                    width: 95vw;
-                    padding: 10px 20px;
-                }
-                
-                h1 {
-                    font-size: 60px;
-                }
-                
-                #introduction .intro {
-                    max-width: 100%;
-                }
-                
-                #introduction div.funky {
-                    display: none;
-                }
-                
-                body {
-                    font-size: 18px;
-                }
-            }
-            
-            /* Add smooth scrolling */
-            html {
-                scroll-behavior: smooth;
-            }
-            
-            /* Add hover effects to header items */
-            header > div {
-                transition: transform 0.2s ease;
-            }
-            
-            header > div:hover {
-                transform: translateY(-2px);
-            }
-            
-            /* Improve the projects button */
-            #introduction > div:not(.funky) > div {
-                margin-top: 30px;
-                transition: transform 0.2s ease;
-            }
-            
-            #introduction > div:not(.funky) > div:hover {
-                transform: translateY(-2px);
-            }
-        </style>
-	</head>
-	<body>
-        <div class="content">
-            <header>
-                <div>
-                    <span class="index">01</span>
-                    <span class="title">About</span>
-                </div>
-                <div>
-                    <span class="index">02</span>
-                    <span class="title">Projects</span>
-                </div>
-                <div>
-                    <span class="index">03</span>
-                    <span class="title">Contact</span>
-                </div>
-            </header>
-            <div id="introduction">
+
+<head>
+    <title id="title">Din - Developer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Din - Roblox Developer & Web Developer. Creating impactful solutions through code.">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Din - Developer">
+    <meta property="og:description"
+        content="Roblox Developer & Web Developer. Creating impactful solutions through code.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://din.works">
+
+    <link rel="canonical" href="https://din.works">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Intersection Observer for animations -->
+    <script src="https://unpkg.com/intersection-observer@0.12.0/intersection-observer.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <header>
+            <div class="active" data-section="introduction">
+                <span class="index">00</span>
+                <span class="title">Introduction</span>
+            </div>
+            <div data-section="about">
+                <span class="index">01</span>
+                <span class="title">About</span>
+            </div>
+            <div data-section="projects">
+                <span class="index">02</span>
+                <span class="title">Projects</span>
+            </div>
+            <div data-section="contact">
+                <span class="index">03</span>
+                <span class="title">Contact</span>
+            </div>
+        </header>
+
+        <main class="sections-container">
+            <!-- Introduction Section -->
+            <section id="introduction" class="section active">
                 <div class="intro">
                     <h1>Din</h1>
-                    <span>I am Dindin, a <b>full-stack programmer</b>, planning to leave a remarkable impact in the current time.</span>
-                    <div>
-                        <!--
-                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="#00000" width="50px" height="50px">
-                            <text x="50%" y="50%">↓ My</text>
-                            <circle cx="50" cy="50" r="50" />
-                        </svg>
-                        -->
-                        <span>
-                            <span class="code">▼</span>
-                            <span>My</span>
-                        </span>
-                        <span> Projects</span>
+                    <span>I am Din, a <b>Roblox developer</b> and <b>web developer</b>, planning to leave a remarkable
+                        impact in the current time.</span>
+                    <div class="social-links">
+                        <a href="https://github.com/dindinyt37" target="_blank" title="GitHub">
+                            <i class="fab fa-github fa-lg"></i>
+                        </a>
+                        <a href="https://x.com/dindinyt37" target="_blank" title="X (Twitter)">
+                            <i class="fab fa-twitter fa-lg"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="funky">
-                    <div>
-                        <span>Hello</span>
-                        <span>World</span>
-                    </div>
-                    <div>
-                        <span>Hello</span>
-                        <span>World</span>
-                    </div>
-                    <div>
-                        <span>Hello</span>
-                        <span>World</span>
-                    </div>
-                    <div>
-                        <span>Hello</span>
-                        <span>World</span>
-                    </div>
-                    <div>
-                        <span>Hello</span>
-                        <span>World</span>
-                    </div>
-                    <div>
-                        <span>Hello</span>
-                        <span>World</span>
-                    </div>
-                    <div>
-                        <span>Hello</span>
-                        <span>World</span>
+                    <div class="scroll-container">
+                        <div><span>Luau</span></div>
+                        <div><span>Roblox</span></div>
+                        <div><span>Node.js</span></div>
+                        <div><span>HTML/CSS</span></div>
+                        <div><span>jQuery</span></div>
+                        <div><span>PHP</span></div>
+                        <div><span>Python</span></div>
+                        <div><span>C++</span></div>
+
+                        <div><span>Luau</span></div>
+                        <div><span>Roblox</span></div>
+                        <div><span>Node.js</span></div>
+                        <div><span>HTML/CSS</span></div>
+                        <div><span>jQuery</span></div>
+                        <div><span>PHP</span></div>
+                        <div><span>Python</span></div>
+                        <div><span>C++</span></div>
+
+                        <div><span>Luau</span></div>
+                        <div><span>Roblox</span></div>
+                        <div><span>Node.js</span></div>
+                        <div><span>HTML/CSS</span></div>
+                        <div><span>jQuery</span></div>
+                        <div><span>PHP</span></div>
+                        <div><span>Python</span></div>
+                        <div><span>C++</span></div>
                     </div>
                 </div>
-            </div>
-        </div>
-	</body>
+            </section>
+
+            <!-- About Section -->
+            <section id="about" class="section">
+                <div class="section-content fade-in">
+                    <h2>About Me</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h3>Roblox Development</h3>
+                            <ul>
+                                <li>Game Design & Development</li>
+                                <li>Luau Programming</li>
+                                <li>UI/UX Design</li>
+                                <li>Performance Optimization</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Web Development</h3>
+                            <ul>
+                                <li>Frontend Development</li>
+                                <li>Responsive Design</li>
+                                <li>Modern JavaScript</li>
+                                <li>Node.js & PHP</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="section">
+                <div class="section-content fade-in">
+                    <h2>Featured Projects</h2>
+                    <div class="projects-grid">
+                        <article class="project-card">
+                            <div class="project-image">
+                                <img src="https://tr.rbxcdn.com/3431ac05e43520ef9c0e21a5d5b0a5c6/768/432/Image/Png"
+                                    alt="Roblox Game">
+                            </div>
+                            <div class="project-info">
+                                <h3>Roblox Game Project</h3>
+                                <p>A multiplayer experience built with Luau, featuring advanced gameplay mechanics and
+                                    optimized performance.</p>
+                                <div class="project-tags">
+                                    <span>Roblox</span>
+                                    <span>Luau</span>
+                                    <span>UI/UX</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="project-card">
+                            <div class="project-image">
+                                <img src="https://tr.rbxcdn.com/e2b4d89e5e1c9c4a5e5e9c9b9b9b9b9b/768/432/Image/Png"
+                                    alt="Web Application">
+                            </div>
+                            <div class="project-info">
+                                <h3>Web Development</h3>
+                                <p>Modern web applications built with cutting-edge technologies, focusing on performance
+                                    and user experience.</p>
+                                <div class="project-tags">
+                                    <span>Node.js</span>
+                                    <span>React</span>
+                                    <span>TypeScript</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="project-card">
+                            <div class="project-image">
+                                <img src="https://tr.rbxcdn.com/e2b4d89e5e1c9c4a5e5e9c9b9b9b9b9b/768/432/Image/Png"
+                                    alt="Backend Systems">
+                            </div>
+                            <div class="project-info">
+                                <h3>Backend Systems</h3>
+                                <p>Robust backend solutions with focus on scalability, security, and efficient data
+                                    management.</p>
+                                <div class="project-tags">
+                                    <span>PHP</span>
+                                    <span>MySQL</span>
+                                    <span>API Design</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section">
+                <div class="section-content fade-in">
+                    <h2>Get in Touch</h2>
+                    <div class="contact-container">
+                        <div class="contact-info">
+                            <p>I'm always interested in hearing about new projects and opportunities. Whether you have a
+                                question or just want to say hi, feel free to reach out!</p>
+                            <div class="contact-links">
+                                <a href="mailto:me@din.works" class="contact-link">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Email Me</span>
+                                </a>
+                                <a href="https://github.com/dindinyt37" target="_blank" class="contact-link">
+                                    <i class="fab fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                                <a href="https://x.com/dindinyt37" target="_blank" class="contact-link">
+                                    <i class="fab fa-twitter"></i>
+                                    <span>Twitter</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        let isAnimating = false;
+        const sections = document.querySelectorAll('.section');
+        const navItems = document.querySelectorAll('header > div');
+        let currentSection = 0;
+
+        // Initialize first section and set up Intersection Observer
+        sections[0].classList.add('active');
+        navItems[0].classList.add('active');
+
+        // Set up Intersection Observer for fade-in elements
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Navigation click handler
+        document.querySelectorAll('header > div').forEach((item, index) => {
+            item.addEventListener('click', function () {
+                if (isAnimating || currentSection === index) return;
+
+                // Update navigation
+                navItems.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+
+                // Transition to new section
+                transitionToSection(index);
+            });
+        });
+
+        // Wheel event handler for smooth section transitions
+        document.addEventListener('wheel', function (e) {
+            if (isAnimating) return;
+
+            const currentSectionElement = sections[currentSection];
+
+            // Get precise scroll measurements
+            const scrollHeight = currentSectionElement.scrollHeight;
+            const clientHeight = currentSectionElement.clientHeight;
+            const scrollTop = currentSectionElement.scrollTop;
+
+            // Calculate if section is scrollable and scroll positions
+            const isScrollable = scrollHeight > clientHeight + 1; // Add 1px threshold for floating point precision
+            const isAtTop = scrollTop <= 0;
+            const isAtBottom = Math.abs(scrollHeight - (scrollTop + clientHeight)) <= 1;
+
+            // For sections with content to scroll
+            if (isScrollable) {
+                // Allow native scrolling when not at boundaries
+                if ((e.deltaY > 0 && !isAtBottom) || (e.deltaY < 0 && !isAtTop)) {
+                    return; // Let the default scroll behavior happen
+                }
+            }
+
+            // Only prevent default and handle section transitions at boundaries
+            if ((e.deltaY > 0 && isAtBottom) || (e.deltaY < 0 && isAtTop) || !isScrollable) {
+                e.preventDefault();
+
+                // Section transitions at boundaries
+                if (e.deltaY > 0 && currentSection < sections.length - 1) {
+                    transitionToSection(currentSection + 1);
+                } else if (e.deltaY < 0 && currentSection > 0) {
+                    transitionToSection(currentSection - 1);
+                }
+            }
+        }, { passive: false });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function (e) {
+            if (isAnimating) return;
+
+            const currentSectionElement = sections[currentSection];
+            const scrollHeight = currentSectionElement.scrollHeight;
+            const clientHeight = currentSectionElement.clientHeight;
+            const scrollTop = currentSectionElement.scrollTop;
+
+            const isScrollable = scrollHeight > clientHeight + 1;
+            const isAtTop = scrollTop <= 0;
+            const isAtBottom = Math.abs(scrollHeight - (scrollTop + clientHeight)) <= 1;
+
+            // Handle arrow keys for both scrolling and section transitions
+            if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+                if (isScrollable && !isAtBottom) {
+                    // Let native scrolling happen
+                    return;
+                } else if (currentSection < sections.length - 1) {
+                    e.preventDefault();
+                    transitionToSection(currentSection + 1);
+                }
+            } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+                if (isScrollable && !isAtTop) {
+                    // Let native scrolling happen
+                    return;
+                } else if (currentSection > 0) {
+                    e.preventDefault();
+                    transitionToSection(currentSection - 1);
+                }
+            }
+        });
+
+        function transitionToSection(index) {
+            if (isAnimating || index === currentSection) return;
+            isAnimating = true;
+
+            // Update navigation
+            navItems.forEach(i => i.classList.remove('active'));
+            navItems[index].classList.add('active');
+
+            // Fade out current section
+            sections[currentSection].classList.remove('active');
+
+            // Prepare next section
+            const nextSection = sections[index];
+
+            // Reset any fade-in elements
+            const fadeElements = nextSection.querySelectorAll('.fade-in');
+            fadeElements.forEach(el => {
+                el.classList.remove('visible');
+                // Trigger reflow
+                void el.offsetWidth;
+                el.classList.add('visible');
+            });
+
+            // Activate next section
+            nextSection.classList.add('active');
+
+            // Update current section index
+            currentSection = index;
+
+            // Reset animation flag after transition
+            setTimeout(() => {
+                isAnimating = false;
+            }, 500);
+        }
+
+        // Scrolling animation for languages
+        const scrollContainer = document.querySelector('.scroll-container');
+        if (scrollContainer) {
+            const scrollSpeed = 50;
+            let currentPosition = 0;
+            let lastTimestamp = 0;
+
+            const itemHeight = 80;
+            const itemPadding = 10;
+            const totalItemHeight = itemHeight + itemPadding;
+            const itemCount = 8;
+            const singleSetHeight = totalItemHeight * itemCount;
+
+            function animate(timestamp) {
+                if (!lastTimestamp) lastTimestamp = timestamp;
+                const elapsed = timestamp - lastTimestamp;
+
+                const delta = (scrollSpeed * elapsed) / 1000;
+                currentPosition += delta;
+
+                if (currentPosition >= singleSetHeight) {
+                    currentPosition = 0;
+                }
+
+                scrollContainer.style.transform = `translateY(${-currentPosition}px)`;
+
+                lastTimestamp = timestamp;
+                requestAnimationFrame(animate);
+            }
+
+            requestAnimationFrame(animate);
+        }
+    </script>
+</body>
+
 </html>
