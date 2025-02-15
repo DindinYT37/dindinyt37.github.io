@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title id="title">DindinYT37 - GitHub Page</title>
+		<title id="title">Din - Full Stack Developer</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content="Din - Full Stack Developer Portfolio. Creating impactful solutions through code.">
+		
+		<!-- Open Graph / Social Media -->
+		<meta property="og:title" content="Din - Full Stack Developer">
+		<meta property="og:description" content="Full Stack Developer Portfolio. Creating impactful solutions through code.">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://din.works">
+		
 		<link rel="canonical" href="https://din.works">
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -174,6 +184,54 @@
                 padding: 0;
                 padding-right: 2px;
             }
+            
+            @media (max-width: 768px) {
+                div.content {
+                    min-width: unset;
+                    width: 95vw;
+                    padding: 10px 20px;
+                }
+                
+                h1 {
+                    font-size: 60px;
+                }
+                
+                #introduction .intro {
+                    max-width: 100%;
+                }
+                
+                #introduction div.funky {
+                    display: none;
+                }
+                
+                body {
+                    font-size: 18px;
+                }
+            }
+            
+            /* Add smooth scrolling */
+            html {
+                scroll-behavior: smooth;
+            }
+            
+            /* Add hover effects to header items */
+            header > div {
+                transition: transform 0.2s ease;
+            }
+            
+            header > div:hover {
+                transform: translateY(-2px);
+            }
+            
+            /* Improve the projects button */
+            #introduction > div:not(.funky) > div {
+                margin-top: 30px;
+                transition: transform 0.2s ease;
+            }
+            
+            #introduction > div:not(.funky) > div:hover {
+                transform: translateY(-2px);
+            }
         </style>
 	</head>
 	<body>
@@ -181,7 +239,7 @@
             <header>
                 <div>
                     <span class="index">01</span>
-                    <span class="title">Projects</span>
+                    <span class="title">About</span>
                 </div>
                 <div>
                     <span class="index">02</span>
@@ -189,7 +247,7 @@
                 </div>
                 <div>
                     <span class="index">03</span>
-                    <span class="title">Projects</span>
+                    <span class="title">Contact</span>
                 </div>
             </header>
             <div id="introduction">
