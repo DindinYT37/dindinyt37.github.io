@@ -1,0 +1,73 @@
+/* Layout - Content */
+.content {
+    position: relative;
+    width: 90vw;
+    height: 90vh;
+    max-width: 1200px;
+    background-color: rgba(17, 18, 19, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    border-radius: 24px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Sections Container */
+.sections-container {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    will-change: transform;
+}
+
+/* Section Styles */
+.section {
+    min-height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease, visibility 0.5s ease;
+    padding: calc(var(--header-height) + var(--section-top-padding)) 40px 40px 40px;
+    pointer-events: none;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-gutter: stable;
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scrolling on iOS */
+}
+
+.section.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: all;
+    z-index: 1;
+}
+
+/* Section Content */
+.section-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.section.active .section-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-content h2 {
+    font-size: 48px;
+    margin-bottom: 40px;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

@@ -1,0 +1,89 @@
+/* Header */
+header {
+    width: 100%;
+    height: var(--header-height);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 40px;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    padding: 0 40px;
+    background-color: rgba(17, 18, 19, 0.8);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 16px rgba(17, 18, 19, 0.8);
+    border-bottom: 1px solid rgba(245, 250, 255, 0.1);
+    border-radius: 24px 24px 0 0;
+    box-sizing: border-box;
+}
+
+header>div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-end;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+header>div:hover {
+    transform: translateY(-2px);
+}
+
+header>div::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-gradient);
+    transition: width 0.3s ease;
+}
+
+header>div:hover::after {
+    width: 100%;
+}
+
+header>div.active::after {
+    width: 100%;
+}
+
+header span.index {
+    font-weight: 600;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+header span.title {
+    font-weight: 200;
+}
+
+/* Custom Scrollbar */
+.section::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.section::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+.section::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.section::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
