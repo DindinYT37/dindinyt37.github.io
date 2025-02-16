@@ -29,9 +29,24 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/sections.css">
 
     <!-- Intersection Observer for animations -->
     <script src="https://unpkg.com/intersection-observer@0.12.0/intersection-observer.js"></script>
+
+    <!-- JavaScript -->
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/projects/public-ip-tracker.js"></script>
+    <script src="js/projects/roblox-utils.js"></script>
+    <script src="js/projects/roblox-stats-tracker.js"></script>
+    <script src="js/main.js"></script>
 </head>
 
 <body>
@@ -60,8 +75,10 @@
             <section id="introduction" class="section active">
                 <div class="intro">
                     <h1>Din</h1>
-                    <span>I am Din, a <b>Roblox developer</b> and <b>web developer</b>, planning to leave a remarkable
-                        impact in the current time.</span>
+                    <span>I am a <b>full-stack developer</b> specializing in Luau and web development, focused on
+                        creating efficient, user-friendly tools and utilities. With a passion for both <b>Roblox
+                            development</b> and <b>AI technology</b>, I strive to build impactful solutions that enhance
+                        developer workflows.</span>
                     <div class="social-links">
                         <a href="https://github.com/dindinyt37" target="_blank" title="GitHub">
                             <i class="fab fa-github fa-lg"></i>
@@ -111,19 +128,28 @@
                         <div class="skill-category">
                             <h3>Roblox Development</h3>
                             <ul>
-                                <li>Game Design & Development</li>
-                                <li>Luau Programming</li>
-                                <li>UI/UX Design</li>
+                                <li>Advanced Luau Programming</li>
+                                <li>Game Systems Architecture</li>
                                 <li>Performance Optimization</li>
+                                <li>Tool & Plugin Development</li>
                             </ul>
                         </div>
                         <div class="skill-category">
                             <h3>Web Development</h3>
                             <ul>
-                                <li>Frontend Development</li>
-                                <li>Responsive Design</li>
-                                <li>Modern JavaScript</li>
-                                <li>Node.js & PHP</li>
+                                <li>Full-Stack Development</li>
+                                <li>Modern JavaScript/TypeScript</li>
+                                <li>Node.js & Express</li>
+                                <li>Responsive UI/UX Design</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h3>Additional Skills</h3>
+                            <ul>
+                                <li>Python Development</li>
+                                <li>C++ Programming</li>
+                                <li>AI/ML Integration</li>
+                                <li>Version Control (Git)</li>
                             </ul>
                         </div>
                     </div>
@@ -136,52 +162,141 @@
                     <h2>Featured Projects</h2>
                     <div class="projects-grid">
                         <article class="project-card">
-                            <div class="project-image">
-                                <img src="https://tr.rbxcdn.com/3431ac05e43520ef9c0e21a5d5b0a5c6/768/432/Image/Png"
-                                    alt="Roblox Game">
+                            <div class="project-image interactive">
+                                <a href="https://www.roblox.com/games/5526212457/CONSOLE-Dragon-Ball-Last-Dawn"
+                                    target="_blank">
+                                    <img src="https://tr.rbxcdn.com/180DAY-5079697a9faa1cbe135a44a8cf233477/768/432/Image/Webp/noFilter"
+                                        alt="Dragon Ball Last Dawn">
+                                    <div class="overlay">
+                                        <i class="fas fa-gamepad"></i>
+                                        <span>View on Roblox</span>
+                                    </div>
+                                </a>
                             </div>
                             <div class="project-info">
-                                <h3>Roblox Game Project</h3>
-                                <p>A multiplayer experience built with Luau, featuring advanced gameplay mechanics and
-                                    optimized performance.</p>
+                                <h3><a href="https://www.roblox.com/games/5526212457/CONSOLE-Dragon-Ball-Last-Dawn"
+                                        target="_blank">Dragon Ball Last Dawn</a></h3>
+                                <p>A Roblox RPG experience with advanced combat mechanics, character progression, and
+                                    multiplayer features. Built for Astra Logic group.</p>
                                 <div class="project-tags">
                                     <span>Roblox</span>
                                     <span>Luau</span>
-                                    <span>UI/UX</span>
+                                    <span>Game Design</span>
                                 </div>
                             </div>
                         </article>
 
                         <article class="project-card">
-                            <div class="project-image">
-                                <img src="https://tr.rbxcdn.com/e2b4d89e5e1c9c4a5e5e9c9b9b9b9b9b/768/432/Image/Png"
-                                    alt="Web Application">
+                            <div class="project-image interactive">
+                                <a href="https://github.com/DindinYT37/public-ip-tracker" target="_blank">
+                                    <div class="project-thumbnail ip-tracker">
+                                        <div class="network-diagram">
+                                            <canvas></canvas>
+                                        </div>
+                                    </div>
+                                    <div class="overlay">
+                                        <i class="fab fa-github"></i>
+                                        <span>View on GitHub</span>
+                                    </div>
+                                </a>
                             </div>
                             <div class="project-info">
-                                <h3>Web Development</h3>
-                                <p>Modern web applications built with cutting-edge technologies, focusing on performance
-                                    and user experience.</p>
+                                <h3><a href="https://github.com/DindinYT37/public-ip-tracker" target="_blank">Public IP
+                                        Tracker</a></h3>
+                                <p>A lightweight Windows system tray utility that monitors and logs IP address changes.
+                                    Features automatic monitoring, CSV logging, and zero configuration setup.</p>
                                 <div class="project-tags">
+                                    <span>C++</span>
+                                    <span>WinAPI</span>
+                                    <span>Networking</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="project-card">
+                            <div class="project-image interactive">
+                                <a href="https://github.com/DindinYT37/roblox-utils" target="_blank">
+                                    <div class="project-thumbnail roblox-utils">
+                                        <div class="utils-icons">
+                                            <div class="util-item" data-util="color">
+                                                <div class="util-icon">
+                                                    <i class="fas fa-paint-brush"></i>  <!-- Change to paint brush icon -->
+                                                </div>
+                                                <div class="util-label">Color Utils</div>
+                                            </div>
+                                            <div class="util-item" data-util="crypto">
+                                                <div class="util-icon">
+                                                    <i class="fas fa-key"></i>
+                                                </div>
+                                                <div class="util-label">Crypto Utils</div>
+                                            </div>
+                                            <div class="util-item" data-util="format">
+                                                <div class="util-icon">
+                                                    <span class="format-text">A</span>
+                                                </div>
+                                                <div class="util-label">Format Utils</div>
+                                            </div>
+                                            <div class="util-item" data-util="performance">
+                                                <div class="util-icon">
+                                                    <i class="fas fa-bolt"></i>
+                                                </div>
+                                                <div class="util-label">Performance</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="overlay">
+                                        <i class="fab fa-github"></i>
+                                        <span>View on GitHub</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="project-info">
+                                <h3><a href="https://github.com/DindinYT37/roblox-utils" target="_blank">Roblox
+                                        Utils</a></h3>
+                                <p>A collection of high-performance Roblox utility functions, including number
+                                    formatting, color manipulation, and cryptographic operations.</p>
+                                <div class="project-tags">
+                                    <span>Luau</span>
+                                    <span>Optimization</span>
+                                    <span>Open Source</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="project-card">
+                            <div class="project-image interactive">
+                                <a href="https://github.com/DindinYT37/roblox-stats-tracker" target="_blank">
+                                    <div class="project-thumbnail stats-tracker">
+                                        <div class="stats">
+                                            <div class="stat" data-stat="players">
+                                                <span class="label">Players</span>
+                                                <span class="value"></span>
+                                            </div>
+                                            <div class="stat" data-stat="visits">
+                                                <span class="label">Visits</span>
+                                                <span class="value"></span>
+                                            </div>
+                                            <div class="stat" data-stat="favorites">
+                                                <span class="label">Favorites</span>
+                                                <span class="value"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="overlay">
+                                        <i class="fab fa-github"></i>
+                                        <span>View on GitHub</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="project-info">
+                                <h3><a href="https://github.com/DindinYT37/roblox-stats-tracker" target="_blank">Roblox
+                                        Stats Tracker</a></h3>
+                                <p>Automated statistics tracker for Roblox games and groups, featuring configurable
+                                    intervals, detailed logging, and built-in rate limiting.</p>
+                                <div class="project-tags">
+                                    <span>JavaScript</span>
                                     <span>Node.js</span>
-                                    <span>React</span>
-                                    <span>TypeScript</span>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="project-card">
-                            <div class="project-image">
-                                <img src="https://tr.rbxcdn.com/e2b4d89e5e1c9c4a5e5e9c9b9b9b9b9b/768/432/Image/Png"
-                                    alt="Backend Systems">
-                            </div>
-                            <div class="project-info">
-                                <h3>Backend Systems</h3>
-                                <p>Robust backend solutions with focus on scalability, security, and efficient data
-                                    management.</p>
-                                <div class="project-tags">
-                                    <span>PHP</span>
-                                    <span>MySQL</span>
-                                    <span>API Design</span>
+                                    <span>Analytics</span>
                                 </div>
                             </div>
                         </article>
@@ -217,189 +332,6 @@
             </section>
         </main>
     </div>
-
-    <script>
-        let isAnimating = false;
-        const sections = document.querySelectorAll('.section');
-        const navItems = document.querySelectorAll('header > div');
-        let currentSection = 0;
-
-        // Initialize first section and set up Intersection Observer
-        sections[0].classList.add('active');
-        navItems[0].classList.add('active');
-
-        // Set up Intersection Observer for fade-in elements
-        const observerOptions = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all fade-in elements
-        document.querySelectorAll('.fade-in').forEach(element => {
-            observer.observe(element);
-        });
-
-        // Navigation click handler
-        document.querySelectorAll('header > div').forEach((item, index) => {
-            item.addEventListener('click', function () {
-                if (isAnimating || currentSection === index) return;
-
-                // Update navigation
-                navItems.forEach(i => i.classList.remove('active'));
-                this.classList.add('active');
-
-                // Transition to new section
-                transitionToSection(index);
-            });
-        });
-
-        // Wheel event handler for smooth section transitions
-        document.addEventListener('wheel', function (e) {
-            if (isAnimating) return;
-
-            const currentSectionElement = sections[currentSection];
-
-            // Get precise scroll measurements
-            const scrollHeight = currentSectionElement.scrollHeight;
-            const clientHeight = currentSectionElement.clientHeight;
-            const scrollTop = currentSectionElement.scrollTop;
-
-            // Calculate if section is scrollable and scroll positions
-            const isScrollable = scrollHeight > clientHeight + 1; // Add 1px threshold for floating point precision
-            const isAtTop = scrollTop <= 0;
-            const isAtBottom = Math.abs(scrollHeight - (scrollTop + clientHeight)) <= 1;
-
-            // For sections with content to scroll
-            if (isScrollable) {
-                // Allow native scrolling when not at boundaries
-                if ((e.deltaY > 0 && !isAtBottom) || (e.deltaY < 0 && !isAtTop)) {
-                    return; // Let the default scroll behavior happen
-                }
-            }
-
-            // Only prevent default and handle section transitions at boundaries
-            if ((e.deltaY > 0 && isAtBottom) || (e.deltaY < 0 && isAtTop) || !isScrollable) {
-                e.preventDefault();
-
-                // Section transitions at boundaries
-                if (e.deltaY > 0 && currentSection < sections.length - 1) {
-                    transitionToSection(currentSection + 1);
-                } else if (e.deltaY < 0 && currentSection > 0) {
-                    transitionToSection(currentSection - 1);
-                }
-            }
-        }, { passive: false });
-
-        // Keyboard navigation
-        document.addEventListener('keydown', function (e) {
-            if (isAnimating) return;
-
-            const currentSectionElement = sections[currentSection];
-            const scrollHeight = currentSectionElement.scrollHeight;
-            const clientHeight = currentSectionElement.clientHeight;
-            const scrollTop = currentSectionElement.scrollTop;
-
-            const isScrollable = scrollHeight > clientHeight + 1;
-            const isAtTop = scrollTop <= 0;
-            const isAtBottom = Math.abs(scrollHeight - (scrollTop + clientHeight)) <= 1;
-
-            // Handle arrow keys for both scrolling and section transitions
-            if (e.key === 'ArrowDown' || e.key === 'PageDown') {
-                if (isScrollable && !isAtBottom) {
-                    // Let native scrolling happen
-                    return;
-                } else if (currentSection < sections.length - 1) {
-                    e.preventDefault();
-                    transitionToSection(currentSection + 1);
-                }
-            } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
-                if (isScrollable && !isAtTop) {
-                    // Let native scrolling happen
-                    return;
-                } else if (currentSection > 0) {
-                    e.preventDefault();
-                    transitionToSection(currentSection - 1);
-                }
-            }
-        });
-
-        function transitionToSection(index) {
-            if (isAnimating || index === currentSection) return;
-            isAnimating = true;
-
-            // Update navigation
-            navItems.forEach(i => i.classList.remove('active'));
-            navItems[index].classList.add('active');
-
-            // Fade out current section
-            sections[currentSection].classList.remove('active');
-
-            // Prepare next section
-            const nextSection = sections[index];
-
-            // Reset any fade-in elements
-            const fadeElements = nextSection.querySelectorAll('.fade-in');
-            fadeElements.forEach(el => {
-                el.classList.remove('visible');
-                // Trigger reflow
-                void el.offsetWidth;
-                el.classList.add('visible');
-            });
-
-            // Activate next section
-            nextSection.classList.add('active');
-
-            // Update current section index
-            currentSection = index;
-
-            // Reset animation flag after transition
-            setTimeout(() => {
-                isAnimating = false;
-            }, 500);
-        }
-
-        // Scrolling animation for languages
-        const scrollContainer = document.querySelector('.scroll-container');
-        if (scrollContainer) {
-            const scrollSpeed = 50;
-            let currentPosition = 0;
-            let lastTimestamp = 0;
-
-            const itemHeight = 80;
-            const itemPadding = 10;
-            const totalItemHeight = itemHeight + itemPadding;
-            const itemCount = 8;
-            const singleSetHeight = totalItemHeight * itemCount;
-
-            function animate(timestamp) {
-                if (!lastTimestamp) lastTimestamp = timestamp;
-                const elapsed = timestamp - lastTimestamp;
-
-                const delta = (scrollSpeed * elapsed) / 1000;
-                currentPosition += delta;
-
-                if (currentPosition >= singleSetHeight) {
-                    currentPosition = 0;
-                }
-
-                scrollContainer.style.transform = `translateY(${-currentPosition}px)`;
-
-                lastTimestamp = timestamp;
-                requestAnimationFrame(animate);
-            }
-
-            requestAnimationFrame(animate);
-        }
-    </script>
 </body>
 
 </html>
