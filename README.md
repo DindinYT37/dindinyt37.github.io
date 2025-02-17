@@ -5,7 +5,7 @@ Welcome to my portfolio website repository! This site showcases my work as a ful
 ## Features
 
 - **Introduction Section**: A brief overview of who I am and what I do.
-- **About Section**: Detailed information about my skills in Roblox and web development.
+- **About Section**: Detailed information about my experiences, skills, and achievements.
 - **Projects Section**: A showcase of my featured projects with links to their respective repositories and live demos.
 - **Contact Section**: A way for visitors to reach out to me via email or social media.
 
