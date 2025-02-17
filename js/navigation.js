@@ -3,6 +3,8 @@ let isAnimating = false;
 let sections;
 let navItems;
 let currentSection = 0;
+let scrollAccumulator = 0;
+const SCROLL_THRESHOLD = 250; // Adjust this value to change sensitivity (higher = less sensitive)
 
 // Navigation functions
 function transitionToSection(index) {
@@ -80,15 +82,19 @@ function initNavigation() {
 
         // For sections with content to scroll
         if (isScrollable) {
-            // Allow native scrolling when not at boundaries
             if ((e.deltaY > 0 && !isAtBottom) || (e.deltaY < 0 && !isAtTop)) {
+                scrollAccumulator = 0; // Reset accumulator when scrolling within section
                 return; // Let the default scroll behavior happen
             }
         }
 
-        // Only prevent default and handle section transitions at boundaries
-        if ((e.deltaY > 0 && isAtBottom) || (e.deltaY < 0 && isAtTop) || !isScrollable) {
+        // Accumulate scroll delta
+        scrollAccumulator += Math.abs(e.deltaY);
+
+        // Only trigger section change if threshold is reached
+        if (scrollAccumulator >= SCROLL_THRESHOLD) {
             e.preventDefault();
+            scrollAccumulator = 0; // Reset accumulator
 
             // Section transitions at boundaries
             if (e.deltaY > 0 && currentSection < sections.length - 1) {
@@ -131,4 +137,4 @@ function initNavigation() {
             }
         }
     });
-} 
+}
